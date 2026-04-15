@@ -7,7 +7,7 @@ parshaHebrew: וַיַּקְהֵל־פְקוּדֵי
 title: "Finishing Something"
 year: 5786
 dateRange: "Shabbat, March 13, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

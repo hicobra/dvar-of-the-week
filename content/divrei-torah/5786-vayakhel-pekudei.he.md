@@ -7,7 +7,7 @@ parshaHebrew: וַיַּקְהֵל־פְקוּדֵי
 title: "לסיים משהו"
 year: 5786
 dateRange: "שבת, 13 במרץ 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

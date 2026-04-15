@@ -6,7 +6,7 @@ parshaHebrew: תְּרוּמָה
 title: "ושכנתי בתוכם"
 year: 5786
 dateRange: "שבת, 20 בפברואר 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

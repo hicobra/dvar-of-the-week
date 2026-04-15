@@ -6,7 +6,7 @@ parshaHebrew: וַיֵּצֵא
 title: "Up and Down"
 year: 5786
 dateRange: "Shabbat, November 28, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

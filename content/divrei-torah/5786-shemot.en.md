@@ -6,7 +6,7 @@ parshaHebrew: שְׁמוֹת
 title: "Turning Aside"
 year: 5786
 dateRange: "Shabbat, January 9, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

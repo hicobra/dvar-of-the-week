@@ -6,7 +6,7 @@ parshaHebrew: תּוֹלְדוֹת
 title: "הבארות של אבא"
 year: 5786
 dateRange: "שבת, 21 בנובמבר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

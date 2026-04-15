@@ -6,7 +6,7 @@ parshaHebrew: פְקוּדֵי
 title: "Following the Cloud"
 year: 5786
 dateRange: "Shabbat, March 20, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

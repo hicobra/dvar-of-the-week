@@ -6,7 +6,7 @@ parshaHebrew: מִקֵּץ
 title: "In a Single Day"
 year: 5786
 dateRange: "Shabbat, December 19, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

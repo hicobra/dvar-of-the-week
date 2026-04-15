@@ -6,7 +6,7 @@ parshaHebrew: וַיְחִי
 title: "ויחי"
 year: 5786
 dateRange: "שבת, 2 בינואר 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

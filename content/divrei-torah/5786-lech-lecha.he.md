@@ -6,7 +6,7 @@ parshaHebrew: לֶךְ־לְךָ
 title: "לך אל עצמך"
 year: 5786
 dateRange: "שבת, 31 באוקטובר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

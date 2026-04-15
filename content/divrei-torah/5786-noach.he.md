@@ -6,7 +6,7 @@ parshaHebrew: נֹחַ
 title: "עלה אחד"
 year: 5786
 dateRange: "שבת, 24 באוקטובר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

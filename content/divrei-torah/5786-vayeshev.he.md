@@ -6,7 +6,7 @@ parshaHebrew: וַיֵּשֶׁב
 title: "מדוע פניכם רעים"
 year: 5786
 dateRange: "שבת, 12 בדצמבר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

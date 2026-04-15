@@ -6,7 +6,7 @@ parshaHebrew: יִתְרוֹ
 title: "להקשיב ליתרו"
 year: 5786
 dateRange: "שבת, 6 בפברואר 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

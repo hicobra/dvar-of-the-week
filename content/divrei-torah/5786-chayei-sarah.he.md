@@ -6,7 +6,7 @@ parshaHebrew: חַיֵּי שָׂרָה
 title: "עשרה גמלים"
 year: 5786
 dateRange: "שבת, 14 בנובמבר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

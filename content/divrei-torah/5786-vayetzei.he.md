@@ -6,7 +6,7 @@ parshaHebrew: וַיֵּצֵא
 title: "עולים ויורדים"
 year: 5786
 dateRange: "שבת, 28 בנובמבר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

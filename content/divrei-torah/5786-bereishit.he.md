@@ -6,7 +6,7 @@ parshaHebrew: בְּרֵאשִׁית
 title: "וירא אלוקים"
 year: 5786
 dateRange: "שבת, 17 באוקטובר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

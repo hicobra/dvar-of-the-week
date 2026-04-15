@@ -6,7 +6,7 @@ parshaHebrew: נֹחַ
 title: A Single Leaf
 year: 5786
 dateRange: "Shabbat, October 24, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

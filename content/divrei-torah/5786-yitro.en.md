@@ -6,7 +6,7 @@ parshaHebrew: יִתְרוֹ
 title: "Listening to Yitro"
 year: 5786
 dateRange: "Shabbat, February 6, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

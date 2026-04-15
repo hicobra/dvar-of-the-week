@@ -6,7 +6,7 @@ parshaHebrew: מִקֵּץ
 title: "ביום אחד"
 year: 5786
 dateRange: "שבת, 19 בדצמבר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

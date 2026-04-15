@@ -6,7 +6,7 @@ parshaHebrew: מִשְׁפָּטִים
 title: "The Pierced Ear"
 year: 5786
 dateRange: "Shabbat, February 13, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

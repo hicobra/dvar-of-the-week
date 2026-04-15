@@ -6,7 +6,7 @@ parshaHebrew: וָאֵרָא
 title: "ארבעה שלבים"
 year: 5786
 dateRange: "שבת, 16 בינואר 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

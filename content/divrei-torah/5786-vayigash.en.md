@@ -6,7 +6,7 @@ parshaHebrew: וַיִּגַּשׁ
 title: "Walking Forward"
 year: 5786
 dateRange: "Shabbat, December 26, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

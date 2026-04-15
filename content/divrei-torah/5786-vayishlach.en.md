@@ -6,7 +6,7 @@ parshaHebrew: וַיִּשְׁלַח
 title: "The Limp"
 year: 5786
 dateRange: "Shabbat, December 5, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

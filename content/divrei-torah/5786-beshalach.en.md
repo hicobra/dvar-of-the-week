@@ -6,7 +6,7 @@ parshaHebrew: בְּשַׁלַּח
 title: "Why Are You Crying Out"
 year: 5786
 dateRange: "Shabbat, January 30, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

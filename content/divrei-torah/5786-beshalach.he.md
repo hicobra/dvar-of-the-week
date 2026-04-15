@@ -6,7 +6,7 @@ parshaHebrew: בְּשַׁלַּח
 title: "מה תצעק אלי"
 year: 5786
 dateRange: "שבת, 30 בינואר 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

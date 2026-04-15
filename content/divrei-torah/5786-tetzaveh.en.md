@@ -6,7 +6,7 @@ parshaHebrew: תְּצַוֶּה
 title: "The Parsha Without Moshe"
 year: 5786
 dateRange: "Shabbat, February 27, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

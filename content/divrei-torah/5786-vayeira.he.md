@@ -6,7 +6,7 @@ parshaHebrew: וַיֵּרָא
 title: "הריצה"
 year: 5786
 dateRange: "שבת, 7 בנובמבר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

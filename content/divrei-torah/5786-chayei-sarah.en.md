@@ -6,7 +6,7 @@ parshaHebrew: חַיֵּי שָׂרָה
 title: "The Ten Camels"
 year: 5786
 dateRange: "Shabbat, November 14, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

@@ -6,7 +6,7 @@ parshaHebrew: וַיְחִי
 title: "And Yaakov Lived"
 year: 5786
 dateRange: "Shabbat, January 2, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

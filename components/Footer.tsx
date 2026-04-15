@@ -8,7 +8,7 @@ export default function Footer() {
           <Flourish />
         </div>
         <p className="text-center font-sans text-xs uppercase tracking-wide-caps text-ink-faint">
-          Dvar of the Week &middot; Shalom
+          Dvar of the Week &middot; Shalom Caras
         </p>
       </div>
     </footer>

@@ -6,7 +6,7 @@ parshaHebrew: וַיַּקְהֵל
 title: "Gathered Again"
 year: 5786
 dateRange: "Shabbat, March 13, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

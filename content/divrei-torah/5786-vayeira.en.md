@@ -6,7 +6,7 @@ parshaHebrew: וַיֵּרָא
 title: "The Running"
 year: 5786
 dateRange: "Shabbat, November 7, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

@@ -6,7 +6,7 @@ parshaHebrew: וַיִּשְׁלַח
 title: "הצליעה"
 year: 5786
 dateRange: "שבת, 5 בדצמבר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

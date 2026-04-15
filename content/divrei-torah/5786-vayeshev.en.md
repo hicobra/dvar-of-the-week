@@ -6,7 +6,7 @@ parshaHebrew: וַיֵּשֶׁב
 title: "Why Are Your Faces Sad"
 year: 5786
 dateRange: "Shabbat, December 12, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

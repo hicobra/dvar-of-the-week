@@ -82,7 +82,7 @@ parshaHebrew: וַיֵּרָא          # shared display metadata (nikud when av
 title: The Title               # Dvar Torah title in English
 year: 5786                     # Hebrew year
 dateRange: "Shabbat, November 7, 2026"
-author: Shalom
+author: Shalom Caras
 status: draft                  # draft or published
 ---
 ```

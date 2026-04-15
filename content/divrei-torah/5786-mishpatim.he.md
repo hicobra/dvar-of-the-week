@@ -6,7 +6,7 @@ parshaHebrew: מִשְׁפָּטִים
 title: "האוזן שנרצעה"
 year: 5786
 dateRange: "שבת, 13 בפברואר 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

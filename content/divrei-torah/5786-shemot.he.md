@@ -6,7 +6,7 @@ parshaHebrew: שְׁמוֹת
 title: "סר לראות"
 year: 5786
 dateRange: "שבת, 9 בינואר 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

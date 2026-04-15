@@ -6,7 +6,7 @@ parshaHebrew: פְקוּדֵי
 title: "אחרי הענן"
 year: 5786
 dateRange: "שבת, 20 במרץ 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

@@ -6,7 +6,7 @@ parshaHebrew: לֶךְ־לְךָ
 title: Go to Yourself
 year: 5786
 dateRange: "Shabbat, October 31, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

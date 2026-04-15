@@ -6,7 +6,7 @@ parshaHebrew: תּוֹלְדוֹת
 title: "Re-Digging the Wells"
 year: 5786
 dateRange: "Shabbat, November 21, 2026"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

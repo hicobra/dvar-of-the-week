@@ -6,7 +6,7 @@ parshaHebrew: תְּצַוֶּה
 title: "הפרשה בלי משה"
 year: 5786
 dateRange: "שבת, 27 בפברואר 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

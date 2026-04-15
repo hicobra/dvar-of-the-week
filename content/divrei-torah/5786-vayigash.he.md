@@ -6,7 +6,7 @@ parshaHebrew: וַיִּגַּשׁ
 title: "ויגש"
 year: 5786
 dateRange: "שבת, 26 בדצמבר 2026"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

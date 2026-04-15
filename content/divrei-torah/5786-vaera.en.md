@@ -6,7 +6,7 @@ parshaHebrew: וָאֵרָא
 title: "Four Stages"
 year: 5786
 dateRange: "Shabbat, January 16, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

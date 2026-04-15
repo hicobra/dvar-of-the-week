@@ -49,7 +49,7 @@ export default async function AboutPage({ searchParams }: PageProps) {
       {!isHebrew ? (
         <div className="mt-10 font-serif text-[17px] leading-[1.7] text-ink-soft md:text-[18px] [&>p]:mb-5">
           <p>
-            Hi — I'm Shalom. Every week, I write a short Dvar Torah on the
+            Hi — I'm Shalom Caras. Every week, I write a short Dvar Torah on the
             Parsha, designed to be told over at the Shabbat table in about three
             to five minutes.
           </p>
@@ -69,7 +69,7 @@ export default async function AboutPage({ searchParams }: PageProps) {
       ) : (
         <div className="mt-10 font-hebrew text-[18px] leading-[1.7] text-ink-soft md:text-[19px] [&>p]:mb-5">
           <p>
-            שלום, אני שלום. כל שבוע אני כותב דבר תורה קצר על פרשת השבוע, שנועד
+            שלום, אני שלום קארס. כל שבוע אני כותב דבר תורה קצר על פרשת השבוע, שנועד
             להיאמר בשולחן השבת בערך שלוש עד חמש דקות.
           </p>
           <p>

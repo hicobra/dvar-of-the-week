@@ -6,7 +6,7 @@ parshaHebrew: כִּי תִשָּׂא
 title: "השברים"
 year: 5786
 dateRange: "שבת, 6 במרץ 2027"
-author: "שלום"
+author: "Shalom Caras"
 status: published
 ---
 

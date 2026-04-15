@@ -6,7 +6,7 @@ parshaHebrew: כִּי תִשָּׂא
 title: "The Broken Pieces"
 year: 5786
 dateRange: "Shabbat, March 6, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 

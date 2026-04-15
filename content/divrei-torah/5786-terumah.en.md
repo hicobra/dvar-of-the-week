@@ -6,7 +6,7 @@ parshaHebrew: תְּרוּמָה
 title: "Among Them"
 year: 5786
 dateRange: "Shabbat, February 20, 2027"
-author: Shalom
+author: Shalom Caras
 status: published
 ---
 
