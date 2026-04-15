@@ -148,3 +148,36 @@ export function formatShabbatTime(date: Date, language: Language): string {
     timeZone: "Asia/Jerusalem",
   }).format(date);
 }
+
+/**
+ * Compose the full Shabbat info line — date, candle lighting, havdalah,
+ * and an explicit "Jerusalem time" marker so readers in other timezones
+ * know the times aren't their own local time. Returns null if there's
+ * nothing to show. Used on the homepage banner and the hero Dvar Torah.
+ */
+export function formatShabbatLine(
+  shabbatTimes: ShabbatTimes | null,
+  language: Language
+): string | null {
+  if (!shabbatTimes) return null;
+  const isHebrew = language === "he";
+  const parts: string[] = [];
+
+  const dateStr = formatShabbatDate(shabbatTimes.shabbatDate, language);
+  parts.push(isHebrew ? `שבת, ${dateStr}` : `Shabbat, ${dateStr}`);
+
+  if (shabbatTimes.candleLighting) {
+    const t = formatShabbatTime(shabbatTimes.candleLighting, language);
+    parts.push(isHebrew ? `הדלקת נרות ${t}` : `Candles ${t}`);
+  }
+  if (shabbatTimes.havdalah) {
+    const t = formatShabbatTime(shabbatTimes.havdalah, language);
+    parts.push(isHebrew ? `הבדלה ${t}` : `Havdalah ${t}`);
+  }
+
+  // Explicit timezone marker — the times above are Asia/Jerusalem,
+  // not the viewer's local clock.
+  parts.push(isHebrew ? "שעון ירושלים" : "Jerusalem time");
+
+  return parts.join(" · ");
+}

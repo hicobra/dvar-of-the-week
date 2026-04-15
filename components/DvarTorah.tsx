@@ -1,6 +1,6 @@
 import Flourish from "./Flourish";
 import LanguageToggle from "./LanguageToggle";
-import { formatShabbatDate, formatShabbatTime } from "@/lib/calendar";
+import { formatShabbatLine } from "@/lib/calendar";
 import type { DvarTorah, Language, ShabbatTimes } from "@/lib/types";
 
 interface DvarTorahProps {
@@ -30,21 +30,7 @@ export default function DvarTorahView({
   const showShabbatTimes = hero && shabbatTimes !== null;
 
   // Build the compact Shabbat info line (when shown)
-  const shabbatLine = (() => {
-    if (!shabbatTimes) return null;
-    const parts: string[] = [];
-    const dateStr = formatShabbatDate(shabbatTimes.shabbatDate, dvarTorah.language);
-    parts.push(isHebrew ? `שבת, ${dateStr}` : `Shabbat, ${dateStr}`);
-    if (shabbatTimes.candleLighting) {
-      const t = formatShabbatTime(shabbatTimes.candleLighting, dvarTorah.language);
-      parts.push(isHebrew ? `הדלקת נרות ${t}` : `Candles ${t}`);
-    }
-    if (shabbatTimes.havdalah) {
-      const t = formatShabbatTime(shabbatTimes.havdalah, dvarTorah.language);
-      parts.push(isHebrew ? `הבדלה ${t}` : `Havdalah ${t}`);
-    }
-    return parts.join(" · ");
-  })();
+  const shabbatLine = formatShabbatLine(shabbatTimes, dvarTorah.language);
 
   return (
     <article

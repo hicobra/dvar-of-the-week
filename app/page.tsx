@@ -3,8 +3,7 @@ import DvarTorahView from "@/components/DvarTorah";
 import {
   getCurrentWeek,
   getShabbatTimes,
-  formatShabbatDate,
-  formatShabbatTime,
+  formatShabbatLine,
 } from "@/lib/calendar";
 import {
   findDvarTorahForSlugs,
@@ -44,21 +43,7 @@ export default async function HomePage({ searchParams }: PageProps) {
   const isHebrew = language === "he";
 
   // Compose the Shabbat times line shown in the fallback banner
-  const fallbackShabbatLine = (() => {
-    if (!shabbatTimes) return null;
-    const parts: string[] = [];
-    const dateStr = formatShabbatDate(shabbatTimes.shabbatDate, language);
-    parts.push(isHebrew ? `שבת, ${dateStr}` : `Shabbat, ${dateStr}`);
-    if (shabbatTimes.candleLighting) {
-      const t = formatShabbatTime(shabbatTimes.candleLighting, language);
-      parts.push(isHebrew ? `הדלקת נרות ${t}` : `Candles ${t}`);
-    }
-    if (shabbatTimes.havdalah) {
-      const t = formatShabbatTime(shabbatTimes.havdalah, language);
-      parts.push(isHebrew ? `הבדלה ${t}` : `Havdalah ${t}`);
-    }
-    return parts.join(" · ");
-  })();
+  const fallbackShabbatLine = formatShabbatLine(shabbatTimes, language);
 
   return (
     <div className="mx-auto pb-16">
