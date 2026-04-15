@@ -4,7 +4,7 @@ parshaSlugs:
 parshaEnglish: Acharei-Mot
 parshaHebrew: אַחַרֵי־מוֹת
 title: "After Death"
-year:5786
+year: 5786
 dateRange: "Saturday, May 15, 2027"
 author: "Shalom Caras"
 status: published
