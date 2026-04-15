@@ -1,11 +1,14 @@
 import Flourish from "./Flourish";
 import LanguageToggle from "./LanguageToggle";
-import type { DvarTorah, Language } from "@/lib/types";
+import { formatShabbatDate, formatShabbatTime } from "@/lib/calendar";
+import type { DvarTorah, Language, ShabbatTimes } from "@/lib/types";
 
 interface DvarTorahProps {
   dvarTorah: DvarTorah;
   /** When true, renders as the primary hero on the homepage. */
   hero?: boolean;
+  /** Shabbat timing for this week. Shown only when hero=true. */
+  shabbatTimes?: ShabbatTimes | null;
   /** Available languages for this Dvar Torah (drives toggle visibility). */
   availableLanguages: Language[];
   /** Pathname for the language toggle links. */
@@ -17,12 +20,31 @@ interface DvarTorahProps {
 export default function DvarTorahView({
   dvarTorah,
   hero = false,
+  shabbatTimes = null,
   availableLanguages,
   pathname,
   fellBackLanguage = false,
 }: DvarTorahProps) {
   const isHebrew = dvarTorah.language === "he";
   const showToggle = availableLanguages.length > 1;
+  const showShabbatTimes = hero && shabbatTimes !== null;
+
+  // Build the compact Shabbat info line (when shown)
+  const shabbatLine = (() => {
+    if (!shabbatTimes) return null;
+    const parts: string[] = [];
+    const dateStr = formatShabbatDate(shabbatTimes.shabbatDate, dvarTorah.language);
+    parts.push(isHebrew ? `שבת, ${dateStr}` : `Shabbat, ${dateStr}`);
+    if (shabbatTimes.candleLighting) {
+      const t = formatShabbatTime(shabbatTimes.candleLighting, dvarTorah.language);
+      parts.push(isHebrew ? `הדלקת נרות ${t}` : `Candles ${t}`);
+    }
+    if (shabbatTimes.havdalah) {
+      const t = formatShabbatTime(shabbatTimes.havdalah, dvarTorah.language);
+      parts.push(isHebrew ? `הבדלה ${t}` : `Havdalah ${t}`);
+    }
+    return parts.join(" · ");
+  })();
 
   return (
     <article
@@ -73,13 +95,33 @@ export default function DvarTorahView({
         <div className="mt-3 flex justify-center">
           <Flourish />
         </div>
-        <p
-          className={`mt-3 text-xs text-ink-faint ${
-            isHebrew ? "font-hebrew text-sm" : "font-sans"
-          }`}
-        >
-          {dvarTorah.dateRange} &middot; {dvarTorah.author}
-        </p>
+
+        {showShabbatTimes && shabbatLine ? (
+          <div className="mt-3 space-y-1">
+            <p
+              className={`text-ink-muted ${
+                isHebrew ? "font-hebrew text-sm" : "font-sans text-xs"
+              }`}
+            >
+              {shabbatLine}
+            </p>
+            <p
+              className={`text-ink-faint ${
+                isHebrew ? "font-hebrew text-xs" : "font-sans text-xs"
+              }`}
+            >
+              {dvarTorah.author}
+            </p>
+          </div>
+        ) : (
+          <p
+            className={`mt-3 text-xs text-ink-faint ${
+              isHebrew ? "font-hebrew text-sm" : "font-sans"
+            }`}
+          >
+            {dvarTorah.dateRange} &middot; {dvarTorah.author}
+          </p>
+        )}
       </header>
 
       <div

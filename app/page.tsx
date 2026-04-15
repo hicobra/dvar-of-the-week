@@ -1,6 +1,11 @@
 import Link from "next/link";
 import DvarTorahView from "@/components/DvarTorah";
-import { getCurrentWeek } from "@/lib/calendar";
+import {
+  getCurrentWeek,
+  getShabbatTimes,
+  formatShabbatDate,
+  formatShabbatTime,
+} from "@/lib/calendar";
 import {
   findDvarTorahForSlugs,
   getMostRecentDvarTorah,
@@ -20,6 +25,8 @@ export default async function HomePage({ searchParams }: PageProps) {
   const language: Language = lang === "he" ? "he" : "en";
 
   const currentWeek = getCurrentWeek();
+  const shabbatTimes = currentWeek ? getShabbatTimes(currentWeek.shabbatDate) : null;
+
   const currentResult = currentWeek
     ? await findDvarTorahForSlugs(currentWeek.slugs, language)
     : { dvar: null, fellBackLanguage: false };
@@ -35,6 +42,23 @@ export default async function HomePage({ searchParams }: PageProps) {
   const currentDisplay = currentWeek ? getDisplayName(currentWeek.slugs) : null;
 
   const isHebrew = language === "he";
+
+  // Compose the Shabbat times line shown in the fallback banner
+  const fallbackShabbatLine = (() => {
+    if (!shabbatTimes) return null;
+    const parts: string[] = [];
+    const dateStr = formatShabbatDate(shabbatTimes.shabbatDate, language);
+    parts.push(isHebrew ? `שבת, ${dateStr}` : `Shabbat, ${dateStr}`);
+    if (shabbatTimes.candleLighting) {
+      const t = formatShabbatTime(shabbatTimes.candleLighting, language);
+      parts.push(isHebrew ? `הדלקת נרות ${t}` : `Candles ${t}`);
+    }
+    if (shabbatTimes.havdalah) {
+      const t = formatShabbatTime(shabbatTimes.havdalah, language);
+      parts.push(isHebrew ? `הבדלה ${t}` : `Havdalah ${t}`);
+    }
+    return parts.join(" · ");
+  })();
 
   return (
     <div className="mx-auto pb-16">
@@ -74,8 +98,17 @@ export default async function HomePage({ searchParams }: PageProps) {
                 ? `השבוע · פרשת ${currentDisplay.hebrew}`
                 : `This week · Parshat ${currentDisplay.english}`}
             </p>
+            {fallbackShabbatLine && (
+              <p
+                className={`mt-1 text-ink-muted ${
+                  isHebrew ? "font-hebrew text-sm" : "font-sans text-xs"
+                }`}
+              >
+                {fallbackShabbatLine}
+              </p>
+            )}
             <p
-              className={`mt-1 text-sm text-ink-muted ${
+              className={`mt-2 text-sm text-ink-muted ${
                 isHebrew ? "font-hebrew text-base" : "font-serif"
               }`}
             >
@@ -92,6 +125,7 @@ export default async function HomePage({ searchParams }: PageProps) {
         <DvarTorahView
           dvarTorah={dvar}
           hero={Boolean(currentDvar)}
+          shabbatTimes={currentDvar ? shabbatTimes : null}
           availableLanguages={availableLanguages}
           pathname="/"
           fellBackLanguage={currentFellBack}

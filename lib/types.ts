@@ -46,3 +46,13 @@ export interface CurrentWeek {
   isCombined: boolean;
   shabbatDate: Date;
 }
+
+/**
+ * Shabbat timing information for a given Shabbat, localized to the
+ * canonical project location (Kochav Yaakov, Israel).
+ */
+export interface ShabbatTimes {
+  shabbatDate: Date;
+  candleLighting: Date | null;
+  havdalah: Date | null;
+}

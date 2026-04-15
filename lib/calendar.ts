@@ -1,6 +1,21 @@
-import { HebrewCalendar, HDate, flags } from "@hebcal/core";
+import { HebrewCalendar, HDate, Location, flags } from "@hebcal/core";
 import { toUrlSlug } from "./parshiot";
-import type { CurrentWeek } from "./types";
+import type { CurrentWeek, Language, ShabbatTimes } from "./types";
+
+// Canonical project location: Kochav Yaakov, Israel.
+// Coordinates: ~31.83° N, 35.27° E. Timezone: Asia/Jerusalem.
+// Candle-lighting minhag: 40 minutes before sunset (standard Israeli
+// yishuv practice). Havdalah: 42 minutes after sunset (tzeit hakochavim).
+const KOCHAV_YAAKOV = new Location(
+  31.8306,
+  35.2678,
+  true,
+  "Asia/Jerusalem",
+  "Kochav Yaakov",
+  "IL"
+);
+const CANDLE_LIGHTING_MINS = 40;
+const HAVDALAH_MINS = 42;
 
 /**
  * Normalize a hebcal English parsha name (e.g. "Bereshit", "Vayera",
@@ -78,4 +93,58 @@ export function getCurrentWeek(now: Date = new Date()): CurrentWeek | null {
 /** Current Hebrew year (approximate, based on today). */
 export function getCurrentHebrewYear(now: Date = new Date()): number {
   return new HDate(now).getFullYear();
+}
+
+/**
+ * Compute candle-lighting and havdalah times for the given Shabbat date,
+ * using the canonical project location (Kochav Yaakov, Israel).
+ */
+export function getShabbatTimes(shabbatDate: Date): ShabbatTimes {
+  // Candle lighting happens on Friday evening, havdalah on Saturday night.
+  const friday = new Date(shabbatDate);
+  friday.setDate(friday.getDate() - 1);
+
+  const events = HebrewCalendar.calendar({
+    start: friday,
+    end: shabbatDate,
+    candlelighting: true,
+    location: KOCHAV_YAAKOV,
+    il: true,
+    noHolidays: true,
+    sedrot: false,
+    candleLightingMins: CANDLE_LIGHTING_MINS,
+    havdalahMins: HAVDALAH_MINS,
+  });
+
+  let candleLighting: Date | null = null;
+  let havdalah: Date | null = null;
+
+  for (const ev of events) {
+    const desc = ev.getDesc();
+    const time = (ev as unknown as { eventTime?: Date }).eventTime;
+    if (!time) continue;
+    if (desc === "Candle lighting") candleLighting = time;
+    else if (desc === "Havdalah") havdalah = time;
+  }
+
+  return { shabbatDate, candleLighting, havdalah };
+}
+
+/** Format a Shabbat date as "April 17" (EN) or "17 באפריל" (HE). */
+export function formatShabbatDate(date: Date, language: Language): string {
+  return new Intl.DateTimeFormat(language === "he" ? "he-IL" : "en-US", {
+    month: "long",
+    day: "numeric",
+    timeZone: "Asia/Jerusalem",
+  }).format(date);
+}
+
+/** Format a time as "6:47 PM" (EN) or "18:47" (HE), in Jerusalem timezone. */
+export function formatShabbatTime(date: Date, language: Language): string {
+  return new Intl.DateTimeFormat(language === "he" ? "he-IL" : "en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: language === "en",
+    timeZone: "Asia/Jerusalem",
+  }).format(date);
 }
