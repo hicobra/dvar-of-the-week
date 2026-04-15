@@ -8,7 +8,10 @@ import { toUrlSlug } from "./parshiot";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "divrei-torah");
 
+// Cache only in production so new/edited markdown files show up immediately
+// during `next dev`. Production builds read content once at build time anyway.
 let cache: DvarTorah[] | null = null;
+const USE_CACHE = process.env.NODE_ENV === "production";
 
 // Filename pattern: {year}-{slug}.{lang}.md
 // e.g. "5786-bereishit.en.md", "5786-tazria-metzora.he.md"
@@ -29,11 +32,11 @@ function toPlainText(md: string): string {
 }
 
 export async function loadAllDivreiTorah(): Promise<DvarTorah[]> {
-  if (cache) return cache;
+  if (USE_CACHE && cache) return cache;
 
   if (!fs.existsSync(CONTENT_DIR)) {
-    cache = [];
-    return cache;
+    if (USE_CACHE) cache = [];
+    return [];
   }
 
   const files = fs
@@ -72,7 +75,7 @@ export async function loadAllDivreiTorah(): Promise<DvarTorah[]> {
     });
   }
 
-  cache = entries;
+  if (USE_CACHE) cache = entries;
   return entries;
 }
 
