@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: theme("colors.parchment.DEFAULT");
+    color: theme("colors.ink.DEFAULT");
+    font-family: var(--font-serif), var(--font-hebrew), Georgia, serif;
+  }
+
+  ::selection {
+    background: theme("colors.accent.DEFAULT" / 25%);
+    color: theme("colors.ink.DEFAULT");
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.accent.DEFAULT");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  [lang="he"] {
+    font-family: var(--font-hebrew), Georgia, serif;
+  }
+}
+
+@layer components {
+  /* Dvar Torah body styling — shared by English and Hebrew */
+  .dvar-content p {
+    margin-bottom: 1.25em;
+  }
+
+  .dvar-content blockquote {
+    margin: 1.75em 0;
+    padding: 1.25em 1.5em;
+    background-color: theme("colors.parchment.200" / 55%);
+    border-left: 2px solid theme("colors.accent.DEFAULT" / 70%);
+    border-radius: 2px;
+    font-family: var(--font-serif), var(--font-hebrew), Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: theme("colors.ink.soft");
+  }
+
+  .dvar-content blockquote p {
+    margin-bottom: 0.5em;
+  }
+
+  .dvar-content blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  .dvar-content blockquote strong {
+    font-family: var(--font-hebrew), Georgia, serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    line-height: 1.8;
+  }
+
+  .dvar-content blockquote em {
+    color: theme("colors.ink.muted");
+    font-style: italic;
+  }
+
+  .dvar-content h2 {
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    padding-top: 1.5em;
+    border-top: 1px solid theme("colors.ink.DEFAULT" / 8%);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: theme("colors.accent.deep");
+  }
+
+  .dvar-content em {
+    font-style: italic;
+    color: theme("colors.ink.DEFAULT");
+  }
+
+  .dvar-content strong {
+    font-weight: 600;
+    color: theme("colors.ink.DEFAULT");
+  }
+
+  /* Hebrew article — right-to-left, adjusted spacing for Hebrew glyph metrics */
+  .dvar-hebrew {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .dvar-hebrew .dvar-content {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Blockquote border flips in RTL */
+  .dvar-hebrew .dvar-content blockquote {
+    border-left: none;
+    border-right: 2px solid theme("colors.accent.DEFAULT" / 70%);
+    text-align: right;
+  }
+
+  /* The takeaway heading stays in Hebrew sans but uppercase doesn't apply to
+     Hebrew script — use tracking only */
+  .dvar-hebrew .dvar-content h2 {
+    font-family: var(--font-hebrew);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: none;
+  }
+}
